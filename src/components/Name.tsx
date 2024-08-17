@@ -1,3 +1,6 @@
+import Alert from "./Alert";
+import { useState } from "react";
+
 function Name() {
   const validNames = new Map([
     ["sharon", "1"],
@@ -5,19 +8,24 @@ function Name() {
     ["joe", "3"],
   ]);
 
+  const [alertVisible, setAlertVisibility] = useState(false);
+
   const handleSubmit = () => {
     const userName = (document.getElementById("name") as HTMLInputElement)
       .value;
     const password = (document.getElementById("password") as HTMLInputElement)
       .value;
     if (validNames.get(userName) === password) {
-      console.log("valid");
+      window.location.href = "/tracker/";
     } else {
-      console.log("invalid");
+      setAlertVisibility(true);
     }
   };
   return (
     <>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>Invalid Login</Alert>
+      )}
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
@@ -30,6 +38,7 @@ function Name() {
         </label>
         <input type="password" className="form-control" id="password"></input>
       </div>
+      <div></div>
       <button
         type="submit"
         className="btn btn-primary"
