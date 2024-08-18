@@ -1,0 +1,60 @@
+.container{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.header-style{
+    margin-bottom:20px;
+    margin-top:20px;
+    color:#9000fe;
+    font-size:40px;
+    font-family:monospace;
+    width:462px;
+}
+
+.clock-in{
+    background-color: rgb(185, 170, 255);
+    border-radius:45px;
+    width:100px;
+    margin-bottom:20px;
+    margin-top:50px;
+}
+.clock-in:hover{
+    background-color: rgb(200, 187, 255);
+    border-radius:45px;
+    width:100px;
+    margin-bottom:20px;
+    margin-top:50px;
+}
+.clock-in:active{
+    background-color: rgb(225, 219, 255);
+    border-radius:45px;
+    width:100px;
+    margin-bottom:20px;
+    margin-top:50px;
+}
+
+.clock-out{
+    background-color: rgb(143, 106, 252);
+    border-radius:45px;
+    width:100px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.clock-out:hover{
+    background-color: rgb(200, 187, 255);
+    border-radius:45px;
+    width:100px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.clock-out:active{
+    background-color: rgb(225, 219, 255);
+    border-radius:45px;
+    width:100px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+

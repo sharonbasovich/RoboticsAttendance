@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import Alert from "./Alert";
+import "./Tracker.css";
 
 interface Props {
   nameLogged: string;
@@ -29,8 +30,10 @@ function Tracker({ nameLogged }: Props) {
 
   return (
     <>
-      <h1>You are logged in as: {nameLogged}</h1>
-      <Button color="success" onClick={handleCheckIn}>
+      <div className='container'>
+        <h1 className='header-style'>You are logged in as: {nameLogged}</h1>
+      </div>
+      <Button onClick={handleCheckIn} className='clock-in container'>
         Clock In
       </Button>
       {inVisibility && (
@@ -38,7 +41,7 @@ function Tracker({ nameLogged }: Props) {
           You are clocked in!
         </Alert>
       )}
-      <Button color="danger" onClick={handleCheckOut}>
+      <Button onClick={handleCheckOut} className="clock-out container">
         Clock Out
       </Button>
       {outVisibility && (

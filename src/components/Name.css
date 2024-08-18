@@ -5,6 +5,15 @@
     justify-content: center;
 
 }
+.container-2 {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.img-school {
+    height:50px;
+    width:auto;
+}
 
 .header-format {
     margin-bottom:20px;
