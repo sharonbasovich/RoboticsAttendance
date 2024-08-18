@@ -4,13 +4,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.animation-medium {
+  height: 300px;
+  width: 300px;
+  transform: rotateY(180deg);
+}
+
 .container-2 {
   display: flex;
   justify-content: flex-end;
 }
 
 .img-school {
-  height: 50px;
+  height: 75px;
   width: auto;
 }
 

@@ -2,6 +2,9 @@ import Alert from "./Alert";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Name.css";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import walkanimation from "../assets/walkanimation.json";
+import { useRef } from "react";
 
 interface Props {
   onValueChange: (newName: string) => void;
@@ -14,6 +17,7 @@ function Name({ onValueChange }: Props) {
     ["Joe", "3"],
   ]);
 
+  const walkRef = useRef<LottieRefCurrentProps>(null);
   const [alertVisible, setAlertVisibility] = useState(false);
   const navigate = useNavigate();
 
@@ -37,18 +41,16 @@ function Name({ onValueChange }: Props) {
       )}
       <div className="container-2">
         <img
-          src="src\assets\St.theresa_logo.png"
+          src="src\assets\Screenshot%202024-08-18%20082306.png"
           alt="Image of School Logo"
           className="img-school"
         />
       </div>
       <div className="container">
         <h1 className="header-format">Robotics Attendance</h1>
-        <img
-          src="src\assets\vex_robot_by_jumbienutes_dffslku-pre.jpg"
-          alt="Image of a Robot."
-          className="img-style"
-        />
+        <div className="animation-medium">
+          <Lottie lottieRef={walkRef} animationData={walkanimation} />
+        </div>
       </div>
       <div className="container">
         <label htmlFor="name" className="custom-format">
