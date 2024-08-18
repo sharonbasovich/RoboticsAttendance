@@ -53,15 +53,16 @@ function Name({ onValueChange }: Props) {
         </label>
         <input type="password" className="input-style" id="password"></input>
       </div>
-      <div></div>
-      <button
-        type="button"
-        className="btn-style container"
-        id="login"
-        onClick={handleSubmit}
-      >
-        Log In
-      </button>
+      <div className='container'>
+        <button
+          type="button"
+          className="btn-style"
+          id="login"
+          onClick={handleSubmit}
+        >
+          Log In
+        </button>
+      </div>
     </>
   );
 }

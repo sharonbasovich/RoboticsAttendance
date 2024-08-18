@@ -31,19 +31,25 @@ function Tracker({ nameLogged }: Props) {
   return (
     <>
       <div className='container'>
-        <h1 className='header-style'>You are logged in as: {nameLogged}</h1>
+        <h1 className='header-style'>Login Successful! Welcome: {nameLogged}</h1>
       </div>
-      <Button onClick={handleCheckIn} className='clock-in container'>
-        Clock In
-      </Button>
+      <div className="container">
+        <Button onClick={handleCheckIn} className='clock-in'>
+          Clock In
+        </Button>
+      </div>
+     
       {inVisibility && (
         <Alert onClose={() => setInVisibility(false)}>
           You are clocked in!
         </Alert>
       )}
-      <Button onClick={handleCheckOut} className="clock-out container">
-        Clock Out
-      </Button>
+      <div className='container'>
+        <Button onClick={handleCheckOut} className="clock-out">
+          Clock Out
+        </Button>
+      </div>
+     
       {outVisibility && (
         <Alert onClose={() => setOutVisibility(false)}>
           You are clocked out after {hours} hours!
