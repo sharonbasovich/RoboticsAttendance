@@ -1,6 +1,7 @@
 import Alert from "./Alert";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Name.css";
 
 interface Props {
   onValueChange: (newName: string) => void;
@@ -33,22 +34,26 @@ function Name({ onValueChange }: Props) {
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Invalid Login</Alert>
       )}
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">
+      <div className="container">
+        <h1 className="header-format">Robotics Attendance</h1>
+        <img src="src\assets\vex_robot_by_jumbienutes_dffslku-pre.jpg" alt="Image of a Robot." className="img-style"/>
+      </div>
+      <div className="container">
+        <label htmlFor="name" className="custom-format">
           Name
         </label>
-        <input type="text" className="form-control" id="name"></input>
+        <input type="text" className="input-style" id="name"></input>
       </div>
-      <div className="mb-3">
-        <label htmlFor="password" className="form-label">
+      <div className="container">
+        <label htmlFor="password" className="custom-format">
           Password
         </label>
-        <input type="password" className="form-control" id="password"></input>
+        <input type="password" className="input-style" id="password"></input>
       </div>
       <div></div>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn-style container"
         id="login"
         onClick={handleSubmit}
       >
