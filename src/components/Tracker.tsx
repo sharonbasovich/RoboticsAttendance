@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 import Alert from "./Alert";
 import axios, { AxiosResponse, AxiosError } from "axios";
+import "./Tracker.css";
 
 interface Props {
   nameLogged: string;
@@ -43,18 +44,28 @@ function Tracker({ nameLogged }: Props) {
 
   return (
     <>
-      <h1>You are logged in as: {nameLogged}</h1>
-      <Button color="success" onClick={handleCheckIn}>
-        Clock In
-      </Button>
+      <div className="container">
+        <h1 className="header-style">
+          Login Successful! Welcome: {nameLogged}
+        </h1>
+      </div>
+      <div className="container">
+        <Button onClick={handleCheckIn} className="clock-in">
+          Clock In
+        </Button>
+      </div>
+
       {inVisibility && (
         <Alert onClose={() => setInVisibility(false)}>
           You are clocked in!
         </Alert>
       )}
-      <Button color="danger" onClick={handleCheckOut}>
-        Clock Out
-      </Button>
+      <div className="container">
+        <Button onClick={handleCheckOut} className="clock-out">
+          Clock Out
+        </Button>
+      </div>
+
       {outVisibility && (
         <Alert onClose={() => setOutVisibility(false)}>
           You are clocked out after {hours} hours!
