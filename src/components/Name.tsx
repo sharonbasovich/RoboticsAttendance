@@ -35,7 +35,7 @@ function Name({ onValueChange }: Props) {
         <Alert onClose={() => setAlertVisibility(false)}>Invalid Login</Alert>
       )}
       <div className='container-2'>
-        <img src="src\assets\St.theresa_logo.png" alt="Image of School Logo" className="img-school"/>
+        <img src="src\assets\Screenshot%202024-08-18%20082306.png" alt="Image of School Logo" className="img-school"/>
       </div>
       <div className="container">
         <h1 className="header-format">Robotics Attendance</h1>
