@@ -47,7 +47,7 @@ function Name({ onValueChange }: Props) {
         />
       </div>
       <div className="container">
-        <h1 className="header-format">Robotics Attendance</h1>
+        <h1 className="header-format">Lions Robotics Attendance</h1>
         <div className="animation-medium">
           <Lottie lottieRef={walkRef} animationData={walkanimation} />
         </div>
