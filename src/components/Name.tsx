@@ -1,7 +1,12 @@
 import Alert from "./Alert";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Name() {
+interface Props {
+  onValueChange: (newName: string) => void;
+}
+
+function Name({ onValueChange }: Props) {
   const validNames = new Map([
     ["sharon", "1"],
     ["nicholas", "2"],
@@ -9,6 +14,7 @@ function Name() {
   ]);
 
   const [alertVisible, setAlertVisibility] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     const userName = (document.getElementById("name") as HTMLInputElement)
@@ -16,11 +22,12 @@ function Name() {
     const password = (document.getElementById("password") as HTMLInputElement)
       .value;
     if (validNames.get(userName) === password) {
-      window.location.href = "/tracker/";
-    } else {
+      onValueChange(userName);
+      navigate("/tracker/");    } else {
       setAlertVisibility(true);
     }
   };
+
   return (
     <>
       {alertVisible && (
@@ -40,7 +47,7 @@ function Name() {
       </div>
       <div></div>
       <button
-        type="submit"
+        type="button"
         className="btn btn-primary"
         id="login"
         onClick={handleSubmit}
