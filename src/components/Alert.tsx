@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import "./Alert.css";
 
 interface Props {
   children: ReactNode;
@@ -9,7 +10,7 @@ function Alert({ children, onClose }: Props) {
 
   return (
     <>
-      <div className="alert alert-danger alert-dismissible">
+      <div className="alert alert-danger alert-dismissible custom-alert-danger">
         {children}
         <button
           type="button"

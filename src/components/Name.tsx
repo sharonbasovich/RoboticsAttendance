@@ -1,4 +1,5 @@
 import Alert from "./Alert";
+import "./Name.css";
 import { useState } from "react";
 
 function Name() {
@@ -26,27 +27,33 @@ function Name() {
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Invalid Login</Alert>
       )}
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">
+      <div className="container">
+        <h1 className="header-format">Robotics Attendance</h1>
+        <img src="src\assets\vex_robot_by_jumbienutes_dffslku-pre.jpg" className="img-style"/>
+      </div>
+
+      <div className="container">
+        <label htmlFor="name" className="custom-format">
           Name
         </label>
-        <input type="text" className="form-control" id="name"></input>
+        <input type="text" className="input-style" id="name"></input>
       </div>
-      <div className="mb-3">
-        <label htmlFor="password" className="form-label">
+      <div className="container">
+        <label htmlFor="password" className="custom-format">
           Password
         </label>
-        <input type="password" className="form-control" id="password"></input>
+        <input type="password" className="input-style" id="password"></input>
       </div>
-      <div></div>
+      <div className="container">
       <button
         type="submit"
-        className="btn btn-primary"
+        className="btn-style"
         id="login"
         onClick={handleSubmit}
       >
         Log In
       </button>
+      </div>
     </>
   );
 }
