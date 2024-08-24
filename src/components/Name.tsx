@@ -5,6 +5,7 @@ import "./Name.css";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import walkanimation from "../assets/walkanimation.json";
 import { useRef } from "react";
+import axios, { AxiosResponse, AxiosError } from "axios";
 
 interface Props {
   onValueChange: (newName: string) => void;
@@ -17,22 +18,53 @@ function Name({ onValueChange }: Props) {
     ["Joe", "3"],
   ]);
 
+ const checkCredentials = async (
+   name: string,
+   password: string
+ ): Promise<boolean> => {
+   let pass = false;
+   try {
+     const response = await axios.post<{ message: string }>(
+       "/check-credentials",
+       { name, password }
+     );
+
+     if (response.status === 200) {
+       console.log(response.data.message); // "Pass" message
+       pass = true; // Set pass to true if credentials are correct
+     }
+   } catch (error) {
+     if (axios.isAxiosError(error) && error.response?.status === 401) {
+       const message = (error.response.data as { message: string }).message;
+       console.log(message); // "Fail" message
+     } else {
+       console.error("There was an error!", error); // Handle other possible errors
+     }
+   }
+
+   return pass; // Return the pass value after the async operation
+ };
+
   const walkRef = useRef<LottieRefCurrentProps>(null);
   const [alertVisible, setAlertVisibility] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const userName = (document.getElementById("name") as HTMLInputElement)
       .value;
     const password = (document.getElementById("password") as HTMLInputElement)
       .value;
-    if (validNames.get(userName) === password) {
+
+    const isPass = await checkCredentials(userName, password); // Wait for checkCredentials to complete
+
+    if (isPass) {
       onValueChange(userName);
       navigate("/tracker/");
     } else {
-      setAlertVisibility(true);
+      setAlertVisibility(true); // Show alert if credentials are incorrect
     }
   };
+
 
   return (
     <>
