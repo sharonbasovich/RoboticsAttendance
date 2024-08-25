@@ -7,7 +7,6 @@ interface Props {
 }
 
 function Alert({ children, onClose }: Props) {
-
   return (
     <>
       <div className="alert alert-danger alert-dismissible custom-alert-danger">
