@@ -5,7 +5,7 @@ import "./Name.css";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import walkanimation from "../assets/walkanimation.json";
 import { useRef } from "react";
-import axios, { AxiosResponse, AxiosError } from "axios";
+import axios from "axios";
 
 interface Props {
   onValueChange: (newName: string) => void;
