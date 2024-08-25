@@ -1,4 +1,5 @@
 import Alert from "./Alert";
+import "./Name.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Name.css";
@@ -62,10 +63,11 @@ function Name({ onValueChange }: Props) {
 
 
   return (
-    <>
+    < >
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>Invalid Login</Alert>
       )}
+
       <div className="container-2">
         <img
           src="src\assets\Screenshot%202024-08-18%20082306.png"
@@ -79,6 +81,7 @@ function Name({ onValueChange }: Props) {
           <Lottie lottieRef={walkRef} animationData={walkanimation} />
         </div>
       </div>
+
       <div className="container">
         <label htmlFor="name" className="custom-format">
           Name
@@ -90,6 +93,7 @@ function Name({ onValueChange }: Props) {
           Password
         </label>
         <input type="password" className="input-style" id="password"></input>
+
       </div>
       <div className="container">
         <button
