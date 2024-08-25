@@ -12,11 +12,6 @@ interface Props {
 }
 
 function Name({ onValueChange }: Props) {
-  const validNames = new Map([
-    ["Sharon", "1"],
-    ["Nicholas", "2"],
-    ["Joe", "3"],
-  ]);
 
  const checkCredentials = async (
    name: string,
