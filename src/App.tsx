@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Tracker from "./components/Tracker";
 import { useState } from "react";
 
-
 function App() {
   const [name, setName] = useState<string>("");
 

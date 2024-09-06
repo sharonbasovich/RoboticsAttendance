@@ -1,7 +1,7 @@
 .app-container {
-    background-color:rgb(255, 255, 255);
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
